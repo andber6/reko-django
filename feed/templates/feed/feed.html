@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">Feed</h2>
+                <hr class="w-50 mb-1">
+            </div>
+        </div>
+        <div class="row">
+            <div class="product-container col-10 offset-1">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
+                    <div class="col-md-8">
+                    {% for post in posts %}
+                    <article class="media content-section">
+                        <div class="media-body">
+                            <div class="article-metadata">
+                                <a class="mr-2" href="#">{{ post.author }}</a>
+                                <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                            </div>
+                            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+                            <p class="article-content">{{ post.content }}</p>
+                        </div>
+                    </article>
+                    {% endfor %}
+                    </div>
+                    <div class="col-md-2">
+          <div class="content-section float-right">
+            <h3>Reko Rings</h3>
+            <p class="text-muted">Click "interested" to show the details about the selected Reko Ring on your feed.
+              <ul class="list-group ul-reko-interested">
+                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                <li class="list-group-item list-group-item-light">Announcements</li>
+                <li class="list-group-item list-group-item-light">Calendars</li>
+                <li class="list-group-item list-group-item-light">etc</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

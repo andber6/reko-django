@@ -2,6 +2,10 @@ html {
     height: 100%;
 }
 
+.vanilla-grey {
+    background-color: #f6f5f3;
+}
+
 body {
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -54,6 +58,16 @@ body {
 
 .border-black {
     border: 1px solid black !important;
+}
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
 }
 
 /* -------------------------------- Media Queries */
