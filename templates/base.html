@@ -55,6 +55,15 @@
                                 </span>
                             </button>
                         </div>
+
+                        <div class="post-button-1">
+                            <button class="post-button-2">
+                                <a href="{% url 'post-create' %}" class="dropdown-item post-button-2">
+                                    <span class="icon"><i class="fas fa-edit"></i></span>New Post
+                                </a>
+                            </button>
+                        </div>
+
                     </div>
                 </form>
             </div>
@@ -72,7 +81,6 @@
                                 {% if request.user.is_superuser %}
                                     <a href="#" class="dropdown-item">Product Management</a>
                                 {% endif %}
-                                <a href="{% url 'post-create' %}" class="dropdown-item">New Post</a>
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
